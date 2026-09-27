@@ -126,115 +126,31 @@ Initial supported timeframes should include:
 ### Trade idea panel
 
 - Generated setup direction
-- Confidence
-- Entry, stop, and target levels
-- Risk/reward ratio
-- Signal rationale
-- Generate idea action
-- Timestamp and data freshness
 
 ### Market context
 
 Optional supporting information may include:
 
 - Trend bias
-- Momentum state
-- Volatility state
-- Key support and resistance levels
-- Recent market structure
+
 
 ## 7. Visual Design Requirements
 
 - Dark trading-terminal aesthetic
 - High contrast and accessible text
-- Neutral charcoal background with restrained green/red market colors
-- Green for bullish or positive movement
-- Red for bearish or negative movement
-- Amber for warnings and data-quality states
-- Use one primary sans-serif typeface with tabular numerals for prices
-- Prefer clean cards, subtle borders, compact spacing, and clear hierarchy
-- Avoid decorative elements that distract from market information
-- Use semantic HTML and accessible labels for controls
-- Maintain readable layouts at desktop, tablet, and mobile widths
 
 ## 8. Interaction Requirements
 
 - Refresh controls must provide visible loading feedback.
 - Timeframe changes must update the chart data and selected state.
-- Generate-idea actions must provide feedback while calculations are running.
-- Buttons must be keyboard accessible and have visible focus states.
-- Interactive controls must have accessible names.
-- Error messages must be understandable and actionable.
-- Do not submit or trigger actions while an equivalent request is already pending.
 
-## 9. Technical Requirements
 
-- Next.js App Router
-- TypeScript
-- React client components only where interactivity is required
-- Binance public Futures REST API for market data
-- Responsive CSS using the project’s existing styling system
-- No user API keys or exchange credentials
-- No order execution functionality
-- No client-side persistence required for the initial version
 
 If server-side API proxying is introduced later, validate and cache requests appropriately to protect the public API and improve reliability.
 
-## 10. Error and Empty States
-
-The app must display clear states for:
-
-- Initial loading
-- Refreshing data
-- Binance API unavailable
-- Rate-limited requests
-- Malformed or missing market data
-- Chart with insufficient candles
-- No clear trade setup
-- Stale market data
-
 The dashboard should retain the most recent valid data when a refresh fails, while clearly marking it as stale.
 
-## 11. Non-Goals
 
-The initial version will not include:
-
-- Live trading or order placement
-- User authentication
-- Portfolio management
-- Deposits or withdrawals
-- Private Binance account data
-- Automated alerts or notifications
-- Backtesting engine
-- Guaranteed predictions or financial advice
-
-## 12. Acceptance Criteria
-
-The application is complete when:
-
-- The dashboard loads without requiring Binance credentials.
-- BTC market data is retrieved from Binance public Futures APIs.
-- Current price and core market metrics are displayed clearly.
-- Users can switch chart timeframes.
-- Users can refresh market data.
-- Users can generate a clearly labeled trade idea.
-- The idea includes entry, stop loss, target, direction, confidence, and rationale when sufficient data exists.
-- The application handles loading, stale, error, and no-setup states.
-- The interface is responsive and keyboard accessible.
-- The product clearly states that ideas are informational and not financial advice.
-- No orders are created or submitted by the application.
-
-## 13. Future Enhancements
-
-- WebSocket streaming for live price and candle updates
-- Configurable indicator settings
-- Multi-timeframe confirmation
-- Historical signal tracking
-- Backtesting and performance reporting
-- Price alerts and browser notifications
-- Saved watchlists
-- Optional user accounts and personalized risk settings
-- Additional markets such as ETHUSDT and major BTC-margined contracts
 
 ## 14. Disclaimer
 
